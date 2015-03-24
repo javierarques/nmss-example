@@ -1,3 +1,3 @@
 # nmss-example
 
-nmss framework default theme
+nmss framework example
