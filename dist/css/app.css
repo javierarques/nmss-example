@@ -1,0 +1,1557 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+/*_ THEMES _____________________________________________________________________________________________________________
+
+    Prototype
+
+    base theme of the framework, change as you wish */
+body {
+  background-color: #f5f5f5;
+  padding-bottom: 6rem; }
+
+/*
+
+    888b    |      e    e      ,d88~~\ ,d88~~\
+    |Y88b   |     d8b  d8b     8888    8888
+    | Y88b  |    d888bdY88b    `Y88b   `Y88b
+    |  Y88b |   / Y88Y Y888b    `Y88b,  `Y88b,
+    |   Y88b|  /   YY   Y888b     8888    8888
+    |    Y888 /          Y888b \__88P' \__88P'
+
+
+    This file includes all the needed dependencies for the nmss framework,
+    the order of these includes cannot be modified as it will broke the
+    overrides.
+
+    A theme MUST be defined before import nmss in your project, 
+    please read README.md file
+     
+
+___ DEFAULTS ___________________________________________________________________________________________________________
+
+    normalize           Render all elements more consistently
+                        and in line with modern standards
+
+___ UTILS ______________________________________________________________________________________________________________
+
+    defaults            Overrides of normalize
+
+    utils               Common layout utilities following emmet sintax
+
+    clearfix            http://nicolasgallagher.com/micro-clearfix-hack/
+
+    proportions         Proportional width system
+
+
+___ TYPE _______________________________________________________________________________________________________________
+
+    type                Typographic system with common type hierarchy
+
+
+___ UNITS ______________________________________________________________________________________________________________
+
+    button              Common button patterns
+
+    form                Form wrapper to align elements and modify their
+                        behaviour, mainly input and label
+
+    input               By default this is a material design like input,
+                        only bottom borders are shown
+
+    nav                 Navigation abstraction as in bootstrap
+
+    offcanvas           Mobile first offcanvas navigation with fixed containers,
+                        menu and toggle button
+
+    figure              Image container with ratios and caption
+
+    card                Material Design alike card
+
+    table               Common Mobile First table patterns
+
+    select              Common select patterns
+
+    label               Common label patterns
+
+    anchor              link styling
+
+    switch              switches!
+
+    tooltip             tooltips!
+
+    optionGroup         radio groups as nice options
+
+    badges              badges
+
+*/
+/* normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio, canvas, video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button, input, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button, input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*_ DEFAULTS ___________________________________________________________________________________________________________
+
+    Overrides normalize
+
+*/
+ul, ol, li, button, h1, h2, h3, h4, h5, h6, p, input {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  line-height: 1; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+a:focus {
+  outline: 0; }
+
+html {
+  font-size: 100%;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+h1, h2, h3, h4, h5, h6 {
+  display: inline-block; }
+
+ul {
+  list-style: none; }
+
+a {
+  color: inherit; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+i {
+  font-style: normal; }
+
+/*_ UTILS  _____________________________________________________________________________________________________________
+
+    Common layout utilities following emmet sintax
+
+*/
+.u-tac {
+  text-align: center !important; }
+
+.u-tar {
+  text-align: right !important; }
+
+.u-ttu {
+  text-transform: uppercase; }
+
+.u-p {
+  padding: 1rem !important; }
+
+.u-pt {
+  padding-top: 1rem !important; }
+
+.u-pr {
+  padding-right: 1rem !important; }
+
+.u-pb {
+  padding-bottom: 1rem !important; }
+
+.u-pl {
+  padding-left: 1rem !important; }
+
+.u-p\[2x\] {
+  padding: 2rem !important; }
+
+.u-pt\[2x\] {
+  padding-top: 2rem !important; }
+
+.u-pr\[2x\] {
+  padding-right: 2rem !important; }
+
+.u-pb\[2x\] {
+  padding-bottom: 2rem !important; }
+
+.u-pl\[2x\] {
+  padding-left: 2rem !important; }
+
+.u-p\[1\/2\] {
+  padding: 0.5rem !important; }
+
+.u-pt\[1\/2\] {
+  padding-top: 0.5rem !important; }
+
+.u-pr\[1\/2\] {
+  padding-right: 0.5rem !important; }
+
+.u-pb\[1\/2\] {
+  padding-bottom: 0.5rem !important; }
+
+.u-pl\[1\/2\] {
+  padding-left: 0.5rem !important; }
+
+.u-pv {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important; }
+
+.u-pv\[2x\] {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important; }
+
+.u-pv\[1\/2\] {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important; }
+
+.u-ph {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important; }
+
+.u-ph\[2x\] {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important; }
+
+.u-ph\[1\/2\] {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important; }
+
+.u-m {
+  margin: 1rem !important; }
+
+.u-mt {
+  margin-top: 1rem !important; }
+
+.u-mr {
+  margin-right: 1rem !important; }
+
+.u-mb {
+  margin-bottom: 1rem !important; }
+
+.u-ml {
+  margin-left: 1rem !important; }
+
+.u-m\[2x\] {
+  margin: 2rem !important; }
+
+.u-mt\[2x\] {
+  margin-top: 2rem !important; }
+
+.u-mr\[2x\] {
+  margin-right: 2rem !important; }
+
+.u-mb\[2x\] {
+  margin-bottom: 2rem !important; }
+
+.u-ml\[2x\] {
+  margin-left: 2rem !important; }
+
+.u-m\[1\/2\] {
+  margin: 0.5rem !important; }
+
+.u-mt\[1\/2\] {
+  margin-top: 0.5rem !important; }
+
+.u-mr\[1\/2\] {
+  margin-right: 0.5rem !important; }
+
+.u-mb\[1\/2\] {
+  margin-bottom: 0.5rem !important; }
+
+.u-ml\[1\/2\] {
+  margin-left: 0.5rem !important; }
+
+.u-mv {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important; }
+
+.u-mv\[2x\] {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important; }
+
+.u-mv\[1\/2\] {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important; }
+
+.u-mh {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important; }
+
+.u-mh\[2x\] {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important; }
+
+.u-mh\[1\/2\] {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important; }
+
+.u-dn {
+  display: none !important; }
+
+.u-db {
+  display: block !important; }
+
+.u-flr {
+  float: right; }
+
+.u-fl {
+  float: left; }
+
+.u-posr {
+  position: relative; }
+
+.u-pos\[absolute-bottom\] {
+  position: absolute;
+  bottom: 0; }
+
+.u-pointer {
+  cursor: pointer; }
+
+.u-tac {
+  text-align: center; }
+
+.u-vam {
+  vertical-align: middle !important; }
+
+.u-fit {
+  max-width: 100%;
+  width: 100%; }
+
+.u-cc {
+  color: currentColor !important; }
+
+.u-ovh {
+  overflow: hidden; }
+
+/*_ UTILS  _____________________________________________________________________________________________________________
+    
+    Clearfix
+
+    Thanks! http://nicolasgallagher.com/micro-clearfix-hack/
+
+*/
+.cf:before, .cf:after, .form-group:before, .form-section:before, .form-group:after, .form-section:after {
+  content: " ";
+  display: table; }
+
+.cf:after, .form-group:after, .form-section:after {
+  clear: both; }
+
+/*_ UTILS ______________________________________________________________________________________________________________
+
+    Proportions
+
+    Proportional width system
+
+    We're using a 5% increment system without columns to keep the design free of
+    constrains. This is important when designing interfaces as the column system
+    fails at the micro level when designing interfaces.
+
+*/
+/*  utility mixin
+
+    Creates a new rule at root with the prefix u- */
+/*  createWidths mixin
+
+    Generates all available widths using the given steps
+    Create the className interpolating breakpoint name for every step. */
+.u-5 {
+  width: 5% !important; }
+
+.u-10 {
+  width: 10% !important; }
+
+.u-15 {
+  width: 15% !important; }
+
+.u-20 {
+  width: 20% !important; }
+
+.u-25 {
+  width: 25% !important; }
+
+.u-30 {
+  width: 30% !important; }
+
+.u-35 {
+  width: 35% !important; }
+
+.u-40 {
+  width: 40% !important; }
+
+.u-45 {
+  width: 45% !important; }
+
+.u-50 {
+  width: 50% !important; }
+
+.u-55 {
+  width: 55% !important; }
+
+.u-60 {
+  width: 60% !important; }
+
+.u-65 {
+  width: 65% !important; }
+
+.u-70 {
+  width: 70% !important; }
+
+.u-75 {
+  width: 75% !important; }
+
+.u-80 {
+  width: 80% !important; }
+
+.u-85 {
+  width: 85% !important; }
+
+.u-90 {
+  width: 90% !important; }
+
+.u-95 {
+  width: 95% !important; }
+
+.u-100 {
+  width: 100% !important; }
+
+.u-3rd {
+  width: 33.33333% !important; }
+
+.u-6th {
+  width: 16.66667% !important; }
+
+.u-7th {
+  width: 14.28571% !important; }
+
+.type-display2 {
+  font-size: 2.8rem;
+  color: #232323; }
+
+.type-display1 {
+  font-size: 1.999rem;
+  color: #232323; }
+
+.type-subheadline {
+  font-family: "Roboto Slab";
+  font-size: 1rem;
+  color: #262b38;
+  line-height: 1.2; }
+
+.type-headline {
+  font-family: "Roboto Slab";
+  font-size: 1.3rem;
+  color: #262b38;
+  line-height: 1; }
+
+.type-title {
+  font-size: 1rem;
+  color: #767676; }
+
+.type-subtitle {
+  font-size: 1rem;
+  color: #767676; }
+
+.type-body {
+  font-family: "Source Sans Pro";
+  font-size: 1rem;
+  color: #767676; }
+
+.tooltip, .optionGroup-content, .type-data {
+  font-family: "Source Sans Pro";
+  font-size: 0.9rem;
+  color: #767676; }
+
+.tabs-item, .label, .type-ui {
+  font-family: "Source Sans Pro";
+  font-size: 0.9rem;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.type-highlight {
+  color: #CCC; }
+
+.u-tsh {
+  text-shadow: 1px 1px 2px #767676; }
+
+.u-c\[inverse\] {
+  color: #f0f0f0; }
+
+.u-c\[highlight\] {
+  color: #CCC; }
+
+body {
+  font-family: "Source Sans Pro";
+  color: #232323; }
+
+p {
+  line-height: 1.414rem;
+  color: #767676; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+
+    Button
+
+    Common button patterns */
+.button {
+  vertical-align: top;
+  outline: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1rem;
+  padding: 1rem 1rem;
+  border: 0;
+  border-radius: 0;
+  background: no-repeat center center #CCC;
+  color: #666;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 300ms ease-out; }
+  .button:hover {
+    background: no-repeat center center #DDD;
+    background-size: auto, 10%;
+    box-shadow: 0 1px 0px no-repeat center center #CCC; }
+
+/*  button--full:       Fills all the available space
+    button--round:      Circular button as in Material Design
+    button--flat:       Non beveled button, used mainly as secondary button
+    button--inline:     Button as inline text, similar to <a> */
+.button--round {
+  border-radius: 100%;
+  line-height: 1;
+  padding: 1rem; }
+.button--flat {
+  background: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  color: #666;
+  padding: 0.6rem 1rem;
+  text-shadow: none;
+  box-shadow: none; }
+.button--inline {
+  padding: 0;
+  background: transparent;
+  text-transform: inherit; }
+  .button--inline:hover {
+    background: transparent; }
+.button--disabled {
+  background: #f0f0f0;
+  color: #CCC;
+  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0px #f0f0f0; }
+  .button--disabled:hover {
+    background: #f0f0f0;
+    box-shadow: 0 1px 0px #f0f0f0; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+    
+    Form
+
+    Form wrapper to align elements and modify their behaviour, mainly input and 
+    label  */
+.form-group {
+  margin-bottom: 0.5rem;
+  position: relative; }
+  .form-group .label {
+    display: block;
+    color: #565656; }
+    .form-group .label[for]:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+  .form-group .label-optional {
+    display: inline-block;
+    color: #999;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 0 0 0.5rem; }
+.form-combo {
+  font-size: 0; }
+.form-section {
+  padding: 1rem;
+  background: #f0f0f0;
+  border-radius: 2px;
+  border: 1px solid #e0e0e0; }
+
+/*  form--inline:   throws label into inline-block behaviour 
+    #TODO input behaviour */
+.form--inline .label {
+  display: inline-block; }
+
+.ng-invalid-pattern.ng-dirty[type="text"], .ng-invalid-pattern.ng-dirty[type="email"], .ng-invalid-pattern.ng-dirty[type="date"], .ng-invalid-pattern.ng-dirty[type="password"], .ng-invalid-pattern.ng-dirty[type="phone"], .ng-invalid-email.ng-dirty[type="text"], .ng-invalid-email.ng-dirty[type="email"], .ng-invalid-email.ng-dirty[type="date"], .ng-invalid-email.ng-dirty[type="password"], .ng-invalid-email.ng-dirty[type="phone"], .ng-invalid-minlength.ng-dirty[type="text"], .ng-invalid-minlength.ng-dirty[type="email"], .ng-invalid-minlength.ng-dirty[type="date"], .ng-invalid-minlength.ng-dirty[type="password"], .ng-invalid-minlength.ng-dirty[type="phone"], .ng-invalid-maxlength.ng-dirty[type="text"], .ng-invalid-maxlength.ng-dirty[type="email"], .ng-invalid-maxlength.ng-dirty[type="date"], .ng-invalid-maxlength.ng-dirty[type="password"], .ng-invalid-maxlength.ng-dirty[type="phone"] {
+  border-bottom: 2px solid #e74c3c; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+
+    Input
+
+    By default this is a material design like input, only bottom borders
+    are shown */
+.input {
+  width: 100%; }
+  .input:focus {
+    outline: 1px solid #46627f;
+    outline-offset: -1px; }
+  .input[type="text"], .input[type="search"], .input[type="email"], .input[type="date"], .input[type="password"], .input[type="phone"] {
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.6rem;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-radius: 0;
+    height: 3rem; }
+  .input[type="radio"] {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    box-shadow: none; }
+  .input[type="checkbox"] {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    top: 0.1rem;
+    position: relative;
+    float: left;
+    margin-right: 0.5rem; }
+  .input[readonly], .input[disabled] {
+    color: #CCC;
+    background: #fcfcfc !important;
+    border: 1px solid #EEE !important; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+    
+    Nav
+
+    Navigation abstraction as in bootstrap */
+.nav {
+  border: 0; }
+  .nav-item {
+    display: block; }
+
+/*  nav--horizontal:    Throws nav on inline block mode */
+.nav--horizontal .nav-item {
+  display: inline-block; }
+
+/*_ MODULE _____________________________________________________________________________________________________________
+    
+    Tab
+
+    Tabbed navigation handling */
+.tabs {
+  display: flex;
+  padding: .5rem 0 0 0;
+  background: #EEE;
+  box-shadow: 0 50px 100px 0px #FFF;
+  border-bottom: 1px solid #DDD; }
+  .tabs-item {
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    top: 1px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    padding: 1rem;
+    transition: all 100ms ease-in; }
+    .tabs-item:hover {
+      color: #000; }
+    .tabs-item--active {
+      border-style: solid;
+      border-color: #CCC #DDD transparent #DDD;
+      border-width: 2px 1px 0 1px;
+      background: #FEFEFE;
+      color: #666; }
+
+/*  Variations descriptions */
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    steps
+
+    moduleDescription */
+.steps {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background: #fff;
+  min-height: 5rem;
+  border-radius: 2px;
+  border-spacing: 0;
+  overflow: hidden;
+  counter-reset: steps; }
+  .steps-item {
+    display: table-cell;
+    text-align: center;
+    color: #AAA;
+    vertical-align: middle; }
+    .steps-item::before {
+      counter-increment: steps;
+      content: counter(steps) ".";
+      margin-right: 5px; }
+    .steps-item:hover {
+      background: #46627f; }
+  .steps-item--active {
+    background: #34495e;
+    color: #FFF; }
+
+/*  Variations descriptions */
+/*_ MODULES ____________________________________________________________________________________________________________
+
+    grid
+
+    Table fixed grid similar to http://mdo.github.io/table-grid/ */
+.g {
+  display: flex; }
+  .g-u {
+    flex-grow: 1; }
+
+.gi {
+  display: flex;
+  flex-wrap: wrap; }
+
+/*  Variations descriptions */
+.g\[pad\] {
+  margin: 0 0 0 -1rem; }
+  .g\[pad\] .g-u {
+    padding: 0 0 0 1rem; }
+
+.gi\[pad\] {
+  margin: 0 0 0 -0.5rem; }
+  .gi\[pad\] .gi-u {
+    padding: 0 0.5rem 1rem; }
+
+.g\[bleed\] {
+  margin: 0 -1rem; }
+
+.gi\[bleed\] {
+  margin: 0 -1rem; }
+
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    icon
+
+    Makes any image behave like an inline icon adjusted to text size */
+.icon {
+  display: inline-block;
+  max-width: 1rem;
+  vertical-align: middle;
+  top: -0.1rem;
+  position: relative; }
+
+/*  Variations descriptions */
+/*_ UNITS ______________________________________________________________________________________________________________
+    
+    OffCanvas
+
+    Mobile first offcanvas navigation with fixed containers, menu and toggle
+    button */
+.offcanvas-menu {
+  width: 18rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #CCC;
+  -webkit-animation: offcanvasMenuHide 0.3s forwards ease-in; }
+
+.offcanvas-menu-item {
+  color: #36273a;
+  padding: 1rem;
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1); }
+
+.offcanvas-menu--show {
+  -webkit-animation: offcanvasMenuShow 0.3s forwards ease-out; }
+
+.offcanvas-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  transition: 300ms all;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  top: 0;
+  padding: 0rem;
+  -webkit-perspective: 100px;
+  transition: all 0.3s ease-out; }
+
+.offcanvas-content--show {
+  transform: translateX(18rem); }
+  .offcanvas-content--show:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2); }
+
+.offcanvas-topbar {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transition: 300ms all;
+  color: #FFF;
+  background-color: transparent;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0.5rem;
+  transition: all 0.3s ease-out; }
+
+.offcanvas-topbar-item {
+  vertical-align: middle;
+  line-height: 0; }
+
+.offcanvas-topbar--show {
+  transform: translateX(18rem); }
+
+@-webkit-keyframes offcanvasMenuShow {
+  from {
+    transform: translateX(-18rem); }
+
+  to {
+    transform: translateX(0); } }
+
+@-webkit-keyframes offcanvasMenuHide {
+  from {
+    transform: translateX(0); }
+
+  to {
+    transform: translateX(-18rem); } }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+    
+    Figure
+
+    Image container with ratios and caption  */
+.figure {
+  position: relative;
+  width: 100%; }
+  .figure-imageContainer {
+    position: relative; }
+  .figure-image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    transition: all 300ms ease-out; }
+  .figure-text {
+    min-height: 4rem;
+    margin-right: 3.5rem; }
+  .figure-caption {
+    padding: 0.5rem;
+    background-color: #FFF;
+    width: 100%;
+    position: relative; }
+  .figure-badges {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10; }
+    .figure-badges-item {
+      color: #FFF;
+      padding: 0.5rem;
+      text-align: right; }
+      .figure-badges-item--inscription {
+        background: #CCC; }
+      .figure-badges-item--favourites {
+        background: #9ac695; }
+      .figure-badges-item--classification {
+        background: #003; }
+      .figure-badges-item--cart {
+        background: #CCC; }
+      .figure-badges-item--paid {
+        background: #9ac695; }
+      .figure-badges-item--livetiming {
+        background: #CCC;
+        color: #666; }
+
+/*  figure--1-2:            Keeps the figure in a 1/2 width ratio
+    figure--16-9:           Keeps the figure in a 16/9 width ratio
+    figure--21-9:           Keeps the figure in a 21/9 width ratio
+
+    figure-image--round:    Makes the image in a figure circular, nice for 
+                            avatar pictures
+
+    figure-caption--inside: Puts the caption over the image aligned to bottom
+
+ */
+.figure--1-2 {
+  width: 100%;
+  padding-bottom: 50%; }
+.figure--16-9 {
+  width: 100%;
+  padding-bottom: 56.25%; }
+.figure--21-9 {
+  width: 100%;
+  padding-bottom: 42.85%; }
+
+.figure-image--round {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  position: relative; }
+
+.figure-caption--inside {
+  position: absolute;
+  background: linear-gradient 5deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%;
+  color: #FFF;
+  padding: 0.5rem;
+  bottom: 0%;
+  width: 100%; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+
+    Card
+
+    Material Design alike card */
+.card {
+  display: inline-block;
+  padding: 1rem;
+  background: #FFF;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  border-width: 0;
+  border-style: none;
+  cursor: pointer;
+  transition: all 200ms ease-out; }
+  .card:hover {
+    transform: translateY(-8px); }
+
+/*  Variations descriptions */
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    pagination
+
+    Show old-school pager for tables, etc. */
+.pagination {
+  padding: 1rem;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.03);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) -60%, transparent 20%);
+  border-top: 1px solid #FFF; }
+  .pagination-page {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    height: 2.5rem; }
+    .pagination-page--active {
+      color: inherit;
+      font-weight: bold;
+      background: rgba(204, 204, 204, 0.5); }
+
+/*_ UNITS ______________________________________________________________________
+
+    alert
+
+    inline notification
+
+*/
+.alert {
+  display: block;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .alert--success {
+    color: #232323;
+    background: #2ecc71; }
+  .alert--warning {
+    color: #232323;
+    background: #f1c40f; }
+  .alert--error {
+    color: #232323;
+    background: #e74c3c; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+    
+    Table
+
+    Common Mobile First table patterns  */
+.table {
+  border-collapse: collapse;
+  width: 100%; }
+  .table-tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.025); }
+    .table-tr:first-child {
+      border-top: none; }
+    .table-tr .table-td:first-child, .table-tr .table-th:first-child {
+      padding-left: 1rem; }
+  .table-th {
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 600; }
+  .table-td {
+    text-align: left;
+    vertical-align: middle;
+    height: 3.2rem; }
+  .table-ov {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+
+/*  table--inline:      borderless as an inline element
+    table--fixed:       fixed structural table
+*/
+.table--inline .table-th {
+  padding: 0; }
+.table--inline .table-td {
+  border: 0;
+  height: auto;
+  padding: 0; }
+.table--interactive .table-tr:hover {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer; }
+.table--interactive thead .table-tr {
+  border: 0; }
+.table--interactive thead .table-tr:hover {
+  background: transparent;
+  cursor: default; }
+.table--fixed {
+  table-layout: fixed; }
+.table--borderless .table-tr {
+  border-top: none; }
+  .table--borderless .table-tr:last-child {
+    border-bottom: none; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+
+    Select
+
+    Common select patterns */
+.select {
+  vertical-align: top;
+  line-height: normal;
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-radius: 0;
+  height: 3rem; }
+  .select:focus {
+    outline: 1px solid #46627f;
+    outline-offset: -1px; }
+  .select[readonly], .select[disabled] {
+    color: #CCC;
+    background: #fcfcfc !important;
+    border: 1px solid #EEE !important; }
+
+/*  select--full:   full width select */
+.select--full {
+  display: block;
+  width: 100%; }
+
+/*_ MODULES ____________________________________________________________________________________________________________
+
+    badges
+
+    Decorations for important messages */
+.badges {
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  background: #CCC;
+  padding: 0.5rem;
+  color: #232323; }
+
+/*_ UNITS ______________________________________________________________________________________________________________
+
+    Label
+
+    Common label patterns */
+.label {
+  display: inline-block;
+  border: 0;
+  padding: 0.6rem 0;
+  border-width: 0;
+  border-color: transparent;
+  border-style: none;
+  position: relative; }
+
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    tooltip
+
+    moduleDescription */
+.tooltip {
+  position: absolute;
+  bottom: 2rem;
+  left: -0.9rem;
+  z-index: 1000;
+  max-width: 35rem;
+  min-width: 20rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #FFF;
+  background: #34495e;
+  border-radius: 2px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.1); }
+  .tooltip:before {
+    content: "";
+    display: block;
+    width: 1rem;
+    transform: rotateZ(45deg);
+    z-index: 999;
+    height: 1rem;
+    position: absolute;
+    bottom: -0.1rem;
+    left: 1rem;
+    background: #34495e; }
+
+/*_ MODULES ____________________________________________________________________________________________________________
+
+    anchor
+
+    Manages link styles */
+.a--hint {
+  font-weight: bold; }
+  .a--hint:hover {
+    text-decoration: underline; }
+
+/*  Variations descriptions */
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    switch
+
+    button with switch behaviour */
+.switch {
+  padding: 0.1rem;
+  border: 0;
+  width: 3rem;
+  text-align: left;
+  outline: none;
+  box-shadow: inset 0 1px 1px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  background: #EEE;
+  border: 1px solid #ddd; }
+  .switch--on {
+    text-align: right;
+    background: #99cc66;
+    border: 1px solid #7fbf40; }
+  .switch-handle {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 0.2rem;
+    background: #FFF;
+    color: #666; }
+
+/*  Variations descriptions */
+/*_ MODULES ____________________________________________________________________________________________________________
+
+    modal
+
+    Modal */
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  position: fixed;
+  display: none; }
+  .modal.show {
+    display: block; }
+
+.modal-content {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  z-index: 1000;
+  min-height: 20rem;
+  min-width: 30rem;
+  width: 1%;
+  background: #fff;
+  transform: scale(0.7) translateX(-50%) translateY(-50%);
+  -webkit-transform: scale(0.7) translateX(-50%) translateY(-50%);
+  transition: 300ms all ease-out;
+  transform-origin: 0 0;
+  opacity: 0;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.1); }
+  .modal-content.show {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+    -webkit-transform: scale(1) translateX(-50%) translateY(-50%);
+    opacity: 1; }
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 10; }
+
+.modal-overlay {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  transition: 300ms all ease-out; }
+  .modal-overlay.show {
+    display: block;
+    opacity: 1; }
+
+/*  Variations descriptions */
+.modal--gallery .modal-content {
+  width: 60rem; }
+
+/*_ MODULES ____________________________________________________________________________________________________________
+    
+    optionGroup
+
+    horizontal one option selector
+    optionally radio button hack to show radio buttons as a group of options */
+.optionGroup {
+  display: flex;
+  flex-wrap: wrap; }
+  .optionGroup-content {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem;
+    vertical-align: middle;
+    min-height: 3.5rem;
+    user-select: none;
+    border: 1px solid #ccc;
+    margin: 0 -1px -1px 0;
+    background: #FFFFFF; }
+    .optionGroup-content:hover {
+      background: #587ca0; }
+  .optionGroup:first-child {
+    margin-left: 0; }
+  .optionGroup--selected .optionGroup-content {
+    background: #34495e;
+    color: #FFF; }
+  .optionGroup-radio {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    position: absolute; }
+  .optionGroup input[type=radio]:checked + .optionGroup-content {
+    background: #34495e;
+    color: #FFF; }
+
+/*  Variations descriptions */
