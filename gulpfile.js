@@ -9,11 +9,11 @@ gulp.task('sass', function () {
 	gulp.src('src/scss/app.scss')
 	.pipe(sass({
         outputStyle: 'compressed',
-        errLogToConsole: true,
-		includePaths: [
-			'node_modules/nmss-theme-prototype/theme',
-			'node_modules/nmss/src',
-		]
+        errLogToConsole: true
+	    // includePaths: [
+	    //   'node_modules/nmss-theme-prototype/theme',
+	    //   'node_modules/nmss/src',
+	    // ]
 	}))
 	.pipe(autoprefixer('last 2 version'))
 	.pipe(gulp.dest('dist/css'));

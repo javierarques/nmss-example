@@ -1,9 +1,22 @@
-// 
+//
 //	Main scss file
-//	-------------------------------------------------------------------
+//	
 
 
-// Theme load
-// 
-@import	"nmss-theme-prototype";
-@import "nmss";
+//	If you have already added the path of nmss and the theme
+//	@import "nmss-theme-prototype"
+//	@import "nmss"
+
+
+//	Or I can import the files directly from here
+//	load nmss theme
+@import	"../../node_modules/nmss-theme-prototype/theme/nmss-theme-prototype";
+
+//	load nmss framework
+@import	"../../node_modules/nmss/src/nmss";
+
+// your scss
+// ...
+body {
+	background: $body-background-color;
+}
